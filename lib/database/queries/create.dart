@@ -1,4 +1,4 @@
-final String createDatabaseQuery = '''
+const String createDatabaseQuery = '''
 
   CREATE TABLE workouts(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT)
 

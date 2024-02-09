@@ -1,23 +1,18 @@
 import 'package:gymman/components/navbar.dart';
 import 'package:flutter/material.dart';
 
-class HomeStructure extends StatefulWidget {
-  const HomeStructure({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<HomeStructure> createState() => _HomeStructureState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _HomeStructureState extends State<HomeStructure> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: MyNavbar(context: context, id: 0).print(),
-      body: Card(
-        shadowColor: Colors.transparent,
-        margin: const EdgeInsets.all(8.0),
-        child: const SizedBox.expand(child: const Center(child: const Text('Home page')))
-      ),
-    );
+      body: const Text(''));
   }
 }

@@ -2,23 +2,23 @@ import 'package:gymman/database/models/workout.dart';
 import 'package:gymman/database/controller.dart';
 import 'package:gymman/components/navigation.dart';
 import 'package:gymman/components/navbar.dart';
-import 'package:gymman/pages/workout.dart';
+import 'package:gymman/pages/workouts.dart';
 import 'package:flutter/material.dart';
 
-class WorkoutAddStructure extends StatefulWidget {
-  const WorkoutAddStructure({ super.key });
+class WorkoutAddPage extends StatefulWidget {
+  const WorkoutAddPage({ super.key });
 
   @override
-  State<WorkoutAddStructure> createState() => _WorkoutAddStructureState();
+  State<WorkoutAddPage> createState() => _WorkoutAddPageState();
 }
 
-class _WorkoutAddStructureState extends State<WorkoutAddStructure> {
+class _WorkoutAddPageState extends State<WorkoutAddPage> {
   final form = TextEditingController();
 
   Future<void> _submit() async {
     await WorkoutController().add(WorkoutModel(name: form.text));
     setState(() {
-      Navigator.push(context, PageRouteAnimationless(pageBuilder: (context, a, b) { return WorkoutsStructure(); }));
+      Navigator.push(context, PageRouteAnimationless(pageBuilder: (context, a, b) { return WorkoutsPage(); }));
     });
   }
 

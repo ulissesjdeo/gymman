@@ -2,22 +2,22 @@ import 'package:gymman/database/models/workout.dart';
 import 'package:gymman/components/navigation.dart';
 import 'package:gymman/database/controller.dart';
 import 'package:gymman/components/navbar.dart';
-import 'package:gymman/pages/workout.dart';
+import 'package:gymman/pages/workouts.dart';
 import 'package:flutter/material.dart';
 
-class WorkoutUpdateStructure extends StatefulWidget {
-  const WorkoutUpdateStructure({ super.key, required this.workout });
+class WorkoutUpdatePage extends StatefulWidget {
+  const WorkoutUpdatePage({ super.key, required this.workout });
   final WorkoutFullModel workout;
 
   @override
-  State<WorkoutUpdateStructure> createState() => _WorkoutUpdateStructureState(workout: this.workout);
+  State<WorkoutUpdatePage> createState() => _WorkoutUpdatePageState(workout: this.workout);
 }
 
-class _WorkoutUpdateStructureState extends State<WorkoutUpdateStructure> {
+class _WorkoutUpdatePageState extends State<WorkoutUpdatePage> {
   final form = TextEditingController();
   final WorkoutFullModel workout;
 
-  _WorkoutUpdateStructureState({ required this.workout });
+  _WorkoutUpdatePageState({ required this.workout });
 
   @override
   void initState() {
@@ -28,7 +28,7 @@ class _WorkoutUpdateStructureState extends State<WorkoutUpdateStructure> {
   Future<void> _submit() async {
     await WorkoutController().update(WorkoutFullModel(id: workout.id, name: form.text));
     setState(() {
-      Navigator.push(context, PageRouteAnimationless(pageBuilder: (context, a, b) { return WorkoutsStructure(); }));
+      Navigator.push(context, PageRouteAnimationless(pageBuilder: (context, a, b) { return WorkoutsPage(); }));
     });
   }
 

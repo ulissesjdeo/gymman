@@ -10,6 +10,8 @@ class MyNavbar {
   NavigationBar print() {
     return NavigationBar(
       selectedIndex: id,
+      surfaceTintColor: Colors.black,
+      backgroundColor: Colors.black,
       indicatorColor: Colors.white,
       onDestinationSelected: (i) {
         switch (i) {
