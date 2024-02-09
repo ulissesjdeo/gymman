@@ -1,4 +1,4 @@
-import 'package:gymman/pages/home.dart' show HomeStructure;
+import 'package:gymman/pages/home.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const GymMan());

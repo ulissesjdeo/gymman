@@ -9,11 +9,10 @@ class HomeStructure extends StatefulWidget {
 }
 
 class _HomeStructureState extends State<HomeStructure> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: MyNavbar(context: context, id: 0).receive(),
+      bottomNavigationBar: MyNavbar(context: context, id: 0).print(),
       body: Card(
         shadowColor: Colors.transparent,
         margin: const EdgeInsets.all(8.0),

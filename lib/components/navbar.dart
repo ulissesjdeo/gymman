@@ -1,14 +1,5 @@
-import 'package:gymman/pages/workout.dart';
-import 'package:gymman/pages/home.dart';
+import 'package:gymman/components/navigation.dart';
 import 'package:flutter/material.dart';
-
-class R extends PageRouteBuilder {
-  R({
-    required super.pageBuilder,
-    super.transitionDuration = Duration.zero,
-    super.reverseTransitionDuration = Duration.zero,
-  });
-}
 
 class MyNavbar {
   BuildContext context;
@@ -16,16 +7,14 @@ class MyNavbar {
 
   MyNavbar({ required this.context, required this.id });
 
-  receive() {
+  NavigationBar print() {
     return NavigationBar(
       selectedIndex: id,
       indicatorColor: Colors.white,
       onDestinationSelected: (i) {
         switch (i) {
-          case 0:
-            Navigator.push(context, R(pageBuilder: (context, a, b) { return HomeStructure(); })); break;
-          case 1: 
-            Navigator.push(context, R(pageBuilder: (context, a, b) { return WorkoutsStructure(); })); break;
+          case 0: navigateHome(context); break;
+          case 1: navigateWorkouts(context); break;
         }
       },
       destinations: const [

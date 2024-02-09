@@ -1,7 +1,7 @@
 class WorkoutModel {
   final String name;
   const WorkoutModel({ required this.name });
-  toMap() => {'name': name};
+  Map<String, Object?> toMap() => {'name': name};
 }
 
 class WorkoutFullModel extends WorkoutModel {
